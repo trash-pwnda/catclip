@@ -132,6 +132,7 @@ A: Three reasons:
 1. You'd need different aliases per platform (`pbcopy`/`xclip`/`wl-copy`/`clip.exe`)
 2. Aliases don't persist on new systems — `catclip` installs once, works everywhere
 3. Process substitution `>(...)` isn't POSIX (requires bash/zsh)
+4. `catclip` is meant for quick, disposable environments (think remote shells, CTF boxes, or Docker containers) where you may not know which OS or clipboard utility is available
 
 **Q: Can I pipe clipboard contents into other commands?**  
 A: Yes — that’s one of the most useful patterns: `catclip -p | jq .` or `catclip -p | hexdump -C`.
